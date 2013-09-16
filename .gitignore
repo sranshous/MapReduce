@@ -1,6 +1,9 @@
 # Custom binaries
 main
 
+# Ignore the graph input files
+*.txt
+
 # Compiled Object files
 *.slo
 *.lo
