@@ -1,6 +1,6 @@
 CC=g++
-CFLAGS=-g -Wall -std=c++0x -O3
-LDFLAGS=
+CFLAGS=-g -Wall -std=c++0x -pg -O3
+LDFLAGS=-pg
 EXEC=main
 DEPS=mapreduce.h writer.h
 SOURCES=main.cpp mapreduce.cpp
