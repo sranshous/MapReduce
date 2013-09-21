@@ -3,6 +3,7 @@ main
 
 # Ignore the graph input files
 *.txt
+*.graph
 
 # Compiled Object files
 *.slo
