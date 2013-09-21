@@ -4,7 +4,7 @@
 #include <string>
 #include "mapreduce.h"
 
-#define DEBUG 1
+#define DEBUG 0
 
 /* key is the filename, value is the contents as a vector */
 void map(std::string key, std::string value, MapperWriter &out)
