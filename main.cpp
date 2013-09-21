@@ -4,9 +4,9 @@
 #include <string>
 #include "mapreduce.h"
 
-#define DEBUG 1
+#define DEBUG 0
 
-/* key is the filename, value is the contents as a vector */
+/* key is the filename, value is the contents */
 void map(std::string key, std::string value, MapperWriter &out)
 {
     std::vector<std::string> lines = split(value, '\n');
@@ -40,7 +40,8 @@ void map(std::string key, std::string value, MapperWriter &out)
 /* key is the node, value is the list of degrees */
 void reduce(std::string key, std::vector<std::string> value, ReducerWriter &out)
 {
-    long count = 0;
+    //long count = 0;
+    register long count = 0;
 
     for(unsigned long i = 0; i < value.size(); i++)
     {
