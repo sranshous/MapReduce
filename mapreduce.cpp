@@ -32,6 +32,7 @@ void mapper(const long numReducers,
   	if (result != lSize) {fputs ("Reading error",stderr); exit (3);}
   	
 	std::string contents = std::string(buffer);
+	//free(buffer); /*TODO: Remove bug 1*/
 	
 	/**
     
@@ -131,6 +132,12 @@ static std::vector<std::string> &split(const std::string &s,
                                        char delim,
                                        std::vector<std::string> &elems)
 {
+	/********* Memory Bug 2 ***********/
+	long lSize;
+  	char * buffer;
+  	buffer = (char*) malloc (sizeof(s));
+  	/***************************/
+  	
     std::stringstream ss(s);
     std::string item;
 
