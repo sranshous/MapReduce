@@ -2,6 +2,7 @@
 #include <fstream>
 #include <cstdlib>
 #include <string>
+#include <sys/time.h>
 #include "mapreduce.h"
 
 #define DEBUG 0
@@ -78,6 +79,12 @@ int main(int argc, char *argv[])
     std::cout << "nMappers = " << nMappers << "\tnReducers = " << nReducers << std::endl;
 #endif
 
+    struct timeval start, end;
+    gettimeofday(&start, NULL);
+
     mapper(nReducers, filename, jobname, map);
     reducer(filename, jobname, reduce);
+
+    gettimeofday(&end, NULL);
+    std::cout << (double)(end.tv_sec - start.tv_sec) + (double)(end.tv_usec - start.tv_usec)/1e6 << std::endl;
 }
