@@ -64,6 +64,28 @@ void reducer(const char* filename,
      * value is a vector which gets each value from the file pushed back */
     std::map<std::string, std::vector<std::string>> kv;
     std::string key, value;
+
+    /*
+     * This turns out to be much slower than the while loop approach
+
+    std::string contents;
+    in.seekg(0, std::ios::end);
+    contents.resize(in.tellg());
+    in.seekg(0, std::ios::beg);
+    in.read(&contents[0], contents.size());
+    in.close();
+
+    std::vector<std::string> lines = split(contents, '\n');
+    for (std::vector<std::string>::size_type i = 0; i < lines.size(); i++)
+    {
+        std::stringstream line(lines[i]);
+        std::getline(line, key, '\t');
+        std::getline(line, value, '\t');
+
+        kv[key].push_back(value);
+    }
+    */
+
     while(!in.eof())
     {
         getline(in, key, '\t');
