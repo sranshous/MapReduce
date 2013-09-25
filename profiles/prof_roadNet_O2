@@ -1,0 +1,221 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  ms/call  ms/call  name    
+ 57.92      0.55     0.55                             reducer(char const*, std::string, void (*)(std::string, std::vector<std::string, std::allocator<std::string> >, ReducerWriter&))
+ 14.74      0.69     0.14        1   140.05   140.05  std::_Rb_tree<std::string, std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > >, std::_Select1st<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > >, std::less<std::string>, std::allocator<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > >*)
+  8.42      0.77     0.08        1    80.03   100.04  map(std::string, std::string, MapperWriter&)
+  4.21      0.81     0.04  1838780     0.00     0.00  void std::vector<std::string, std::allocator<std::string> >::_M_insert_aux<std::string const&>(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, std::string const&)
+  3.16      0.84     0.03   713508     0.00     0.00  std::_Rb_tree_iterator<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > > std::_Rb_tree<std::string, std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > >, std::_Select1st<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > >, std::less<std::string>, std::allocator<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > > >::_M_insert_unique_<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > >(std::_Rb_tree_const_iterator<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > >, std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > >&&)
+  2.11      0.86     0.02  2022530     0.00     0.00  MapperWriter::write(std::string, std::string)
+  2.11      0.88     0.02  1427020     0.00     0.00  std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<char*>(char*, char*, std::allocator<char> const&)
+  2.11      0.90     0.02   713508     0.00     0.00  reduce(std::string, std::vector<std::string, std::allocator<std::string> >, ReducerWriter&)
+  2.11      0.92     0.02   713508     0.00     0.00  std::string __gnu_cxx::__to_xstring<std::string, char>(int (*)(char*, unsigned long, char const*, __va_list_tag*), unsigned long, char const*, ...)
+  2.11      0.94     0.02   713508     0.00     0.00  std::_Rb_tree_iterator<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > > std::_Rb_tree<std::string, std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > >, std::_Select1st<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > >, std::less<std::string>, std::allocator<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > > >::_M_insert_<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > >(std::_Rb_tree_node_base const*, std::_Rb_tree_node_base const*, std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > >&&)
+  1.05      0.95     0.01   713508     0.00     0.00  ReducerWriter::write(std::string)
+  0.00      0.95     0.00        2     0.00     0.00  split(std::string const&, char)
+  0.00      0.95     0.00        2     0.00     0.00  split(std::string const&, char, std::vector<std::string, std::allocator<std::string> >&)
+  0.00      0.95     0.00        1     0.00     0.00  _GLOBAL__sub_I__Z3mapSsSsR12MapperWriter
+  0.00      0.95     0.00        1     0.00     0.00  _GLOBAL__sub_I__Z6mapperlPKcSsPFvSsSsR12MapperWriterE
+  0.00      0.95     0.00        1     0.00     0.00  std::pair<std::_Rb_tree_iterator<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > >, bool> std::_Rb_tree<std::string, std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > >, std::_Select1st<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > >, std::less<std::string>, std::allocator<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > > >::_M_insert_unique<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > >(std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > >&&)
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+ 
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this 
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 2 byte(s) for 1.05% of 0.95 seconds
+
+index % time    self  children    called     name
+                                                 <spontaneous>
+[1]     89.5    0.55    0.30                 reducer(char const*, std::string, void (*)(std::string, std::vector<std::string, std::allocator<std::string> >, ReducerWriter&)) [1]
+                0.14    0.00       1/1           std::_Rb_tree<std::string, std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > >, std::_Select1st<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > >, std::less<std::string>, std::allocator<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > >*) [2]
+                0.02    0.04  713508/713508      reduce(std::string, std::vector<std::string, std::allocator<std::string> >, ReducerWriter&) [5]
+                0.03    0.02  713508/713508      std::_Rb_tree_iterator<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > > std::_Rb_tree<std::string, std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > >, std::_Select1st<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > >, std::less<std::string>, std::allocator<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > > >::_M_insert_unique_<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > >(std::_Rb_tree_const_iterator<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > >, std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > >&&) [6]
+                0.04    0.00 1838757/1838780     void std::vector<std::string, std::allocator<std::string> >::_M_insert_aux<std::string const&>(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, std::string const&) [7]
+                0.01    0.00  713510/1427020     std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<char*>(char*, char*, std::allocator<char> const&) [10]
+-----------------------------------------------
+                              713508             std::_Rb_tree<std::string, std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > >, std::_Select1st<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > >, std::less<std::string>, std::allocator<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > >*) [2]
+                0.14    0.00       1/1           reducer(char const*, std::string, void (*)(std::string, std::vector<std::string, std::allocator<std::string> >, ReducerWriter&)) [1]
+[2]     14.7    0.14    0.00       1+713508  std::_Rb_tree<std::string, std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > >, std::_Select1st<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > >, std::less<std::string>, std::allocator<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > >*) [2]
+                              713508             std::_Rb_tree<std::string, std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > >, std::_Select1st<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > >, std::less<std::string>, std::allocator<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > >*) [2]
+-----------------------------------------------
+                                                 <spontaneous>
+[3]     10.5    0.00    0.10                 mapper(long, char const*, std::string, void (*)(std::string, std::string, MapperWriter&)) [3]
+                0.08    0.02       1/1           map(std::string, std::string, MapperWriter&) [4]
+                0.00    0.00       2/1427020     std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<char*>(char*, char*, std::allocator<char> const&) [10]
+-----------------------------------------------
+                0.08    0.02       1/1           mapper(long, char const*, std::string, void (*)(std::string, std::string, MapperWriter&)) [3]
+[4]     10.5    0.08    0.02       1         map(std::string, std::string, MapperWriter&) [4]
+                0.02    0.00 2022530/2022530     MapperWriter::write(std::string, std::string) [9]
+                0.00    0.00       2/2           split(std::string const&, char) [13]
+-----------------------------------------------
+                0.02    0.04  713508/713508      reducer(char const*, std::string, void (*)(std::string, std::vector<std::string, std::allocator<std::string> >, ReducerWriter&)) [1]
+[5]      6.3    0.02    0.04  713508         reduce(std::string, std::vector<std::string, std::allocator<std::string> >, ReducerWriter&) [5]
+                0.02    0.01  713508/713508      std::string __gnu_cxx::__to_xstring<std::string, char>(int (*)(char*, unsigned long, char const*, __va_list_tag*), unsigned long, char const*, ...) [8]
+                0.01    0.00  713508/713508      ReducerWriter::write(std::string) [12]
+-----------------------------------------------
+                0.03    0.02  713508/713508      reducer(char const*, std::string, void (*)(std::string, std::vector<std::string, std::allocator<std::string> >, ReducerWriter&)) [1]
+[6]      5.3    0.03    0.02  713508         std::_Rb_tree_iterator<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > > std::_Rb_tree<std::string, std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > >, std::_Select1st<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > >, std::less<std::string>, std::allocator<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > > >::_M_insert_unique_<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > >(std::_Rb_tree_const_iterator<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > >, std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > >&&) [6]
+                0.02    0.00  713507/713508      std::_Rb_tree_iterator<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > > std::_Rb_tree<std::string, std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > >, std::_Select1st<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > >, std::less<std::string>, std::allocator<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > > >::_M_insert_<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > >(std::_Rb_tree_node_base const*, std::_Rb_tree_node_base const*, std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > >&&) [11]
+                0.00    0.00       1/1           std::pair<std::_Rb_tree_iterator<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > >, bool> std::_Rb_tree<std::string, std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > >, std::_Select1st<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > >, std::less<std::string>, std::allocator<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > > >::_M_insert_unique<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > >(std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > >&&) [15]
+-----------------------------------------------
+                0.00    0.00      23/1838780     split(std::string const&, char, std::vector<std::string, std::allocator<std::string> >&) [14]
+                0.04    0.00 1838757/1838780     reducer(char const*, std::string, void (*)(std::string, std::vector<std::string, std::allocator<std::string> >, ReducerWriter&)) [1]
+[7]      4.2    0.04    0.00 1838780         void std::vector<std::string, std::allocator<std::string> >::_M_insert_aux<std::string const&>(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, std::string const&) [7]
+-----------------------------------------------
+                0.02    0.01  713508/713508      reduce(std::string, std::vector<std::string, std::allocator<std::string> >, ReducerWriter&) [5]
+[8]      3.2    0.02    0.01  713508         std::string __gnu_cxx::__to_xstring<std::string, char>(int (*)(char*, unsigned long, char const*, __va_list_tag*), unsigned long, char const*, ...) [8]
+                0.01    0.00  713508/1427020     std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<char*>(char*, char*, std::allocator<char> const&) [10]
+-----------------------------------------------
+                0.02    0.00 2022530/2022530     map(std::string, std::string, MapperWriter&) [4]
+[9]      2.1    0.02    0.00 2022530         MapperWriter::write(std::string, std::string) [9]
+-----------------------------------------------
+                0.00    0.00       2/1427020     mapper(long, char const*, std::string, void (*)(std::string, std::string, MapperWriter&)) [3]
+                0.01    0.00  713508/1427020     std::string __gnu_cxx::__to_xstring<std::string, char>(int (*)(char*, unsigned long, char const*, __va_list_tag*), unsigned long, char const*, ...) [8]
+                0.01    0.00  713510/1427020     reducer(char const*, std::string, void (*)(std::string, std::vector<std::string, std::allocator<std::string> >, ReducerWriter&)) [1]
+[10]     2.1    0.02    0.00 1427020         std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<char*>(char*, char*, std::allocator<char> const&) [10]
+-----------------------------------------------
+                0.00    0.00       1/713508      std::pair<std::_Rb_tree_iterator<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > >, bool> std::_Rb_tree<std::string, std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > >, std::_Select1st<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > >, std::less<std::string>, std::allocator<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > > >::_M_insert_unique<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > >(std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > >&&) [15]
+                0.02    0.00  713507/713508      std::_Rb_tree_iterator<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > > std::_Rb_tree<std::string, std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > >, std::_Select1st<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > >, std::less<std::string>, std::allocator<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > > >::_M_insert_unique_<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > >(std::_Rb_tree_const_iterator<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > >, std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > >&&) [6]
+[11]     2.1    0.02    0.00  713508         std::_Rb_tree_iterator<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > > std::_Rb_tree<std::string, std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > >, std::_Select1st<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > >, std::less<std::string>, std::allocator<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > > >::_M_insert_<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > >(std::_Rb_tree_node_base const*, std::_Rb_tree_node_base const*, std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > >&&) [11]
+-----------------------------------------------
+                0.01    0.00  713508/713508      reduce(std::string, std::vector<std::string, std::allocator<std::string> >, ReducerWriter&) [5]
+[12]     1.1    0.01    0.00  713508         ReducerWriter::write(std::string) [12]
+-----------------------------------------------
+                0.00    0.00       2/2           map(std::string, std::string, MapperWriter&) [4]
+[13]     0.0    0.00    0.00       2         split(std::string const&, char) [13]
+                0.00    0.00       2/2           split(std::string const&, char, std::vector<std::string, std::allocator<std::string> >&) [14]
+-----------------------------------------------
+                0.00    0.00       2/2           split(std::string const&, char) [13]
+[14]     0.0    0.00    0.00       2         split(std::string const&, char, std::vector<std::string, std::allocator<std::string> >&) [14]
+                0.00    0.00      23/1838780     void std::vector<std::string, std::allocator<std::string> >::_M_insert_aux<std::string const&>(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, std::string const&) [7]
+-----------------------------------------------
+                0.00    0.00       1/1           std::_Rb_tree_iterator<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > > std::_Rb_tree<std::string, std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > >, std::_Select1st<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > >, std::less<std::string>, std::allocator<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > > >::_M_insert_unique_<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > >(std::_Rb_tree_const_iterator<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > >, std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > >&&) [6]
+[15]     0.0    0.00    0.00       1         std::pair<std::_Rb_tree_iterator<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > >, bool> std::_Rb_tree<std::string, std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > >, std::_Select1st<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > >, std::less<std::string>, std::allocator<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > > >::_M_insert_unique<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > >(std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > >&&) [15]
+                0.00    0.00       1/713508      std::_Rb_tree_iterator<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > > std::_Rb_tree<std::string, std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > >, std::_Select1st<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > >, std::less<std::string>, std::allocator<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > > >::_M_insert_<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > >(std::_Rb_tree_node_base const*, std::_Rb_tree_node_base const*, std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > >&&) [11]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [37]
+[21]     0.0    0.00    0.00       1         _GLOBAL__sub_I__Z3mapSsSsR12MapperWriter [21]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [37]
+[22]     0.0    0.00    0.00       1         _GLOBAL__sub_I__Z6mapperlPKcSsPFvSsSsR12MapperWriterE [22]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+
+Index by function name
+
+  [21] _GLOBAL__sub_I__Z3mapSsSsR12MapperWriter (main.cpp) [14] split(std::string const&, char, std::vector<std::string, std::allocator<std::string> >&) (mapreduce.cpp) [11] std::_Rb_tree_iterator<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > > std::_Rb_tree<std::string, std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > >, std::_Select1st<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > >, std::less<std::string>, std::allocator<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > > >::_M_insert_<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > >(std::_Rb_tree_node_base const*, std::_Rb_tree_node_base const*, std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > >&&)
+  [22] _GLOBAL__sub_I__Z6mapperlPKcSsPFvSsSsR12MapperWriterE (mapreduce.cpp) [9] MapperWriter::write(std::string, std::string) [15] std::pair<std::_Rb_tree_iterator<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > >, bool> std::_Rb_tree<std::string, std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > >, std::_Select1st<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > >, std::less<std::string>, std::allocator<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > > >::_M_insert_unique<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > >(std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > >&&)
+   [4] map(std::string, std::string, MapperWriter&) [12] ReducerWriter::write(std::string) [6] std::_Rb_tree_iterator<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > > std::_Rb_tree<std::string, std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > >, std::_Select1st<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > >, std::less<std::string>, std::allocator<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > > >::_M_insert_unique_<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > >(std::_Rb_tree_const_iterator<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > >, std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > >&&)
+  [13] split(std::string const&, char) [8] std::string __gnu_cxx::__to_xstring<std::string, char>(int (*)(char*, unsigned long, char const*, __va_list_tag*), unsigned long, char const*, ...) [2] std::_Rb_tree<std::string, std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > >, std::_Select1st<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > >, std::less<std::string>, std::allocator<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, std::vector<std::string, std::allocator<std::string> > > >*)
+   [5] reduce(std::string, std::vector<std::string, std::allocator<std::string> >, ReducerWriter&) [10] std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<char*>(char*, char*, std::allocator<char> const&)
+   [1] reducer(char const*, std::string, void (*)(std::string, std::vector<std::string, std::allocator<std::string> >, ReducerWriter&)) [7] void std::vector<std::string, std::allocator<std::string> >::_M_insert_aux<std::string const&>(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, std::string const&)
