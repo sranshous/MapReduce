@@ -100,7 +100,7 @@ void reducer(const char* filename,
     /* The final file to write to */
     std::stringstream outfile;
     outfile << jobname << ".final";
-    std::ofstream out(outfile.str(), std::ios::app);
+    std::ofstream out(outfile.str(), std::ios::out);
 
     if (!out)
     {
