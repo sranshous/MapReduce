@@ -20,3 +20,7 @@ main
 *.lai
 *.la
 *.a
+
+# Output files
+*.final
+*.intermediate

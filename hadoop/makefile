@@ -1,16 +1,20 @@
 all: compile jar
 
-compile: DegreeCount.java FrequencyCount.java
+compile: DegreeCount.java FrequencyCount.java DegreeCountRmat.java
 	rm -rf degreecount_classes
 	rm -rf frequencycount_classes
+	rm -rf degreecountrmat_classes
 	mkdir degreecount_classes
 	mkdir frequencycount_classes
-	javac -classpath /opt/hadoop/hadoop-1.2.1/hadoop-core-1.2.1.jar -d degreecount_classes/ DegreeCount.java
-	javac -classpath /opt/hadoop/hadoop-1.2.1/hadoop-core-1.2.1.jar -d frequencycount_classes/ FrequencyCount.java
+	mkdir degreecountrmat_classes
+	javac -classpath ${HADOOP_PREFIX}/hadoop-core-1.2.1.jar -d degreecount_classes/ DegreeCount.java
+	javac -classpath ${HADOOP_PREFIX}/hadoop-core-1.2.1.jar -d frequencycount_classes/ FrequencyCount.java
+	javac -classpath ${HADOOP_PREFIX}/hadoop-core-1.2.1.jar -d degreecountrmat_classes/ DegreeCountRmat.java
 
 jar: $(compile)
-	jar -cvf ~/degreecount.jar -C degreecount_classes .
-	jar -cvf ~/frequencycount.jar -C frequencycount_classes .
+	jar -cvf dist/degreecount.jar -C degreecount_classes .
+	jar -cvf dist/frequencycount.jar -C frequencycount_classes .
+	jar -cvf dist/degreecountrmat.jar -C degreecountrmat_classes .
 
 rem_deg:
 	${HADOOP_PREFIX}/bin/hadoop dfs -rmr output_deg
