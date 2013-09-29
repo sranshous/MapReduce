@@ -2,11 +2,12 @@
 #include <fstream>
 #include <cstdlib>
 #include <string>
+#include <sys/time.h>
 #include "mapreduce.h"
 
 #define DEBUG 0
 
-/* key is the filename, value is the contents as a vector */
+/* key is the filename, value is the contents */
 void map(std::string key, std::string value, MapperWriter &out)
 {
     std::vector<std::string> lines = split(value, '\n');
@@ -40,7 +41,8 @@ void map(std::string key, std::string value, MapperWriter &out)
 /* key is the node, value is the list of degrees */
 void reduce(std::string key, std::vector<std::string> value, ReducerWriter &out)
 {
-    long count = 0;
+    //long count = 0;
+    register long count = 0;
 
     for(unsigned long i = 0; i < value.size(); i++)
     {
@@ -77,6 +79,12 @@ int main(int argc, char *argv[])
     std::cout << "nMappers = " << nMappers << "\tnReducers = " << nReducers << std::endl;
 #endif
 
+    struct timeval start, end;
+    gettimeofday(&start, NULL);
+
     mapper(nReducers, filename, jobname, map);
     reducer(filename, jobname, reduce);
+
+    gettimeofday(&end, NULL);
+    std::cout << (double)(end.tv_sec - start.tv_sec) + (double)(end.tv_usec - start.tv_usec)/1e6 << std::endl;
 }

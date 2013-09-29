@@ -1,11 +1,11 @@
-CC=g++
-CFLAGS=-g -Wall -std=c++0x -O3
-LDFLAGS=
-EXEC=main
-DEPS=mapreduce.h writer.h
-SOURCES=main.cpp mapreduce.cpp
-OBJECTS=$(SOURCES:.cpp=.o)
-OUTPUTS=*.intermediate *.final
+CC	= g++
+CFLAGS	= -g -Wall -std=c++0x -O3 #-pg
+LDFLAGS	= #-pg
+EXEC	= main
+DEPS	= mapreduce.h writer.h
+SOURCES	= main.cpp mapreduce.cpp
+OBJECTS	= $(SOURCES:.cpp=.o)
+OUTPUTS	= *.intermediate *.final
 
 all: $(SOURCES) $(EXEC)
 
